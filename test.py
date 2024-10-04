@@ -1,10 +1,9 @@
-ls=[1,2,3,4]
-lst=[]
-x=1
+s="abc"
+t="ahbgdc"
 
-for j in ls:
-    x*=j
-    lst.append(x)
-print(lst)    
-    
-    
+index=[]
+
+for i in range(len(t)):
+    if s[i] == t[i]:
+        index.append(i)
+print(index)        
