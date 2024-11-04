@@ -1,20 +1,23 @@
-s= "IIIV"
-roman = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
-val = []
+word="a3e"
+n= len(word)
+vowels=0
+consonent = 0
+digits = 0
+test_str = ''.join(letter for letter in word if letter.isalnum())
 
-for i in range(len(s)):
-    val.append(roman[s[i]])
-print(val)    
-total = 0
+if len(test_str) == n:
+    for i in range(n):
+        if word [i] in "aeiouAEIOU":
+            vowels += 1
+        if word[i] in "0123456789":
+            digits += 1
+    consonent = n - (vowels + digits)    
+else:
+    print("Invalid input")
+    exit()     
 
-for i in range (len(val)-1):
-    current = val[i]
-    if current < val[i+1]:
-        total -= current 
-    else:
-        total += current
-
-total+= val[-1]
-
-print(total)        
+if len(test_str) >=3 and consonent >=1 and vowels >=1:
+    print("Valid")
+else:
+    print("Invalid")
 
